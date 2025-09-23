@@ -1,0 +1,528 @@
+/* ===== ОБЩИЕ БАЗОВЫЕ СТИЛИ ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+
+/* ===== МОДУЛЬ 1: КОНТЕЙНЕР БЛОКА (ДЕКСТОП НЕ ТРОНУТ) ===== */
+.hero-block-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    height: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 0;
+    background-color: #000;
+    margin-bottom: 20px;
+}
+
+/* ===== МОДУЛЬ 2: СЛАЙДЕР КАРТИНОК (ДЕКСТОП НЕ ТРОНУТ) ===== */
+.background-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.slides-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transition: transform 1s ease-in-out;
+}
+
+.slide-item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* ===== МОДУЛЬ 3А: ЗАГОЛОВОК (ДЕКСТОП НЕ ТРОНУТ) ===== */
+.hero-title-main {
+    position: absolute;
+    top: 35px;
+    left: 0;
+    z-index: 3;
+    background-color: #ff6b35;
+    width: 850px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 45px;
+    border-radius: 0;
+}
+
+.hero-title-main-text {
+    font-size: 46px;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1;
+    margin: 0;
+    font-family: 'Montserrat', Arial, sans-serif;
+    white-space: nowrap;
+}
+
+/* ===== МОДУЛЬ 3Б: ПОДЗАГОЛОВОК (ДЕКСТОП НЕ ТРОНУТ) ===== */
+.hero-title-sub {
+    position: absolute;
+    top: 105px;
+    left: 0;
+    z-index: 3;
+    background-color: #ff6b35;
+    width: 850px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 45px;
+    border-radius: 0;
+}
+
+.hero-title-sub-text {
+    font-size: 46px;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1;
+    margin: 0;
+    font-family: 'Montserrat', Arial, sans-serif;
+    white-space: nowrap;
+}
+
+/* ===== МОДУЛЬ 4: БЛОК ПРЕИМУЩЕСТВ (ДЕКСТОП НЕ ТРОНУТ) ===== */
+.advantages-block {
+    position: absolute;
+    bottom: 130px;
+    left: 0;
+    width: 600px;
+    z-index: 3;
+}
+
+.advantage-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px 20px 15px 45px;
+    border-radius: 0;
+}
+
+.advantage-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.advantage-text {
+    font-size: 17.5px;
+    color: #333333;
+    font-weight: 500;
+    line-height: 1.4;
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+
+/* ===== МОДУЛЬ 5: КНОПКА (ДЕКСТОП НЕ ТРОНУТ) ===== */
+.action-button-block {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    z-index: 4;
+}
+
+.action-button {
+    background-color: #ff6b35;
+    color: #ffffff;
+    padding: 20px 30px;
+    border: none;
+    border-radius: 0;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    line-height: 1.3;
+    letter-spacing: 0.5px;
+    transform: scale(1);
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.action-button:hover {
+    background-color: #e55a32;
+}
+
+.action-button:active {
+    transform: scale(0.95);
+    background-color: #d44a2b;
+    transition: all 0.1s ease;
+}
+
+/* ===== МОДУЛЬ 6: ВСПЛЫВАЮЩЕЕ ОКНО (ДЕКСТОП НЕ ТРОНУТ) ===== */
+.contact-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    z-index: 9999;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.contact-popup-overlay.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-popup {
+    background: #1a1a1a;
+    border-radius: 0;
+    padding: 40px;
+    max-width: 450px;
+    width: 90%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    position: relative;
+    animation: popupSlideIn 0.4s ease-out;
+    border: none;
+}
+
+.contact-popup-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 29.5px;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.3s, transform 0.3s;
+    line-height: 1;
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.contact-popup-close:hover {
+    color: #ff6b35;
+    transform: rotate(90deg);
+}
+
+.contact-popup-title {
+    text-align: center;
+    font-size: 27.5px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 25px;
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.contact-popup-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 15px 20px;
+    background: #2a2a2a;
+    border-radius: 0;
+    border-left: 4px solid #ff6b35;
+}
+
+.contact-popup-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 15px;
+    color: #ff6b35;
+    flex-shrink: 0;
+}
+
+.contact-popup-text {
+    font-size: 17.5px;
+    color: #ffffff;
+    font-weight: 500;
+    flex-grow: 1;
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.contact-popup-text a {
+    color: #ff6b35;
+    text-decoration: none;
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.contact-popup-text a:hover {
+    color: #ff6b35;
+    text-decoration: none;
+}
+
+.contact-popup-messengers {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 2px solid #333;
+}
+
+.contact-popup-messenger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+    color: white;
+    font-weight: 600;
+}
+
+.contact-popup-messenger:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.contact-popup-whatsapp {
+    background: linear-gradient(135deg, #25D366, #128C7E);
+}
+
+.contact-popup-telegram {
+    background: linear-gradient(135deg, #0088cc, #005580);
+}
+
+.contact-popup-messenger img {
+    width: 32px;
+    height: 32px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes popupSlideIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(-50px) scale(0.9); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0) scale(1); 
+    }
+}
+
+/* ===== НОВЫЙ МЕДИА-ЗАПРОС ДЛЯ 769-810PX ===== */
+@media (min-width: 769px) and (max-width: 810px) {
+    body {
+        padding: 0;
+    }
+
+    .hero-block-container {
+        height: 550px;
+        margin-bottom: 5px;
+        margin-top: 0;
+    }
+
+    .hero-title-main, .hero-title-sub {
+        left: 50% !important;
+        right: unset !important;
+        transform: translateX(-50%) !important;
+        width: 850px !important;
+        max-width: 95% !important;
+        height: 55px;
+        justify-content: center;
+        padding: 0 30px;
+    }
+
+    .hero-title-main {
+        top: 30px;
+    }
+
+    .hero-title-sub {
+        top: 90px;
+    }
+
+    /* АДАПТИВНЫЙ РАЗМЕР ТЕКСТА ДЛЯ СРЕДНИХ ПЛАНШЕТОВ */
+    .hero-title-main-text, .hero-title-sub-text {
+        font-size: clamp(32px, 4.0vw, 42px) !important;
+        text-align: center;
+        letter-spacing: 0.7px;
+    }
+
+    /* ПРЕИМУЩЕСТВА АДАПТИРУЕМ ПОД СРЕДНИЙ РАЗМЕР */
+    .advantages-block {
+        bottom: 80px;
+        left: 50% !important;
+        right: unset !important;
+        transform: translateX(-50%) !important;
+        width: 500px;
+        max-width: 90%;
+    }
+
+    .advantage-item {
+        padding: 10px 18px;
+        margin: 0 auto 12px auto;
+    }
+
+    .advantage-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .advantage-text {
+        font-size: 15px;
+    }
+
+    .action-button-block {
+        display: none !important;
+    }
+}
+
+/* ===== ИСПРАВЛЕНИЯ ТОЛЬКО ДЛЯ МОБИЛОК ===== */
+@media (max-width: 768px) {
+    body {
+        padding: 0;
+    }
+
+    .hero-block-container {
+        height: 500px;
+        margin-bottom: 5px;
+        margin-top: 0;
+    }
+
+    .hero-title-main, .hero-title-sub {
+        left: 50% !important;
+        right: unset !important;
+        transform: translateX(-50%) !important;
+        width: 850px !important;
+        max-width: 99% !important;
+        height: 50px;
+        justify-content: center;
+        padding: 0 25px;
+    }
+
+    .hero-title-main {
+        top: 25px;
+    }
+
+    .hero-title-sub {
+        top: 80px;
+    }
+
+    /* АДАПТИВНЫЙ РАЗМЕР ТЕКСТА ЗАГОЛОВКОВ ПОД РАЗРЕШЕНИЕ */
+    .hero-title-main-text, .hero-title-sub-text {
+        font-size: clamp(28px, 4.2vw, 38px) !important;
+        text-align: center;
+        letter-spacing: 0.5px;
+    }
+
+    /* ПРЕИМУЩЕСТВА БЕЗ ИЗМЕНЕНИЙ */
+    .advantages-block {
+        bottom: 60px;
+        left: 50% !important;
+        right: unset !important;
+        transform: translateX(-50%) !important;
+        width: 450px;
+        max-width: 95%;
+    }
+
+    .advantage-item {
+        padding: 8px 15px;
+        margin: 0 auto 10px auto;
+    }
+
+    .advantage-icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    .advantage-text {
+        font-size: 13px;
+    }
+
+    .action-button-block {
+        display: none !important;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 0;
+    }
+
+    .hero-block-container {
+        height: 400px;
+        margin-bottom: 5px;
+        margin-top: 0;
+    }
+
+    .hero-title-main, .hero-title-sub {
+        left: 50% !important;
+        right: unset !important;
+        transform: translateX(-50%) !important;
+        width: 97% !important;
+        max-width: 420px !important;
+        height: 45px;
+        justify-content: center;
+        padding: 0 20px;
+    }
+
+    .hero-title-main {
+        top: 20px;
+    }
+
+    .hero-title-sub {
+        top: 70px;
+    }
+
+    /* АДАПТИВНЫЙ РАЗМЕР ТЕКСТА ДЛЯ МЕЛКИХ МОБИЛОК */
+    .hero-title-main-text, .hero-title-sub-text {
+        font-size: clamp(20px, 5.0vw, 26px) !important;
+        text-align: center;
+        letter-spacing: 0.3px;
+    }
+
+    /* ПРЕИМУЩЕСТВА БЕЗ ИЗМЕНЕНИЙ */
+    .advantages-block {
+        bottom: 40px;
+        left: 50% !important;
+        right: unset !important;
+        transform: translateX(-50%) !important;
+        width: 90%;
+        max-width: 320px;
+    }
+
+    .advantage-item {
+        padding: 6px 12px;
+        margin: 0 auto 8px auto;
+    }
+
+    .advantage-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .advantage-text {
+        font-size: 12px;
+    }
+}

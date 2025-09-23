@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Завод сэндвич-панелей - слайдер</title>
+    
+    <!-- Подключение Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Подключение CSS -->
+    <link rel="stylesheet" href="slider.css">
+</head>
+<body>
+
+    <!-- ===== ОСНОВНОЙ КОНТЕЙНЕР (АВТОНОМНЫЙ) ===== -->
+    <div class="hero-block-container" id="heroContainer">
+        
+        <!-- ===== СЛАЙДЕР КАРТИНОК (АВТОНОМНЫЙ) ===== -->
+        <div class="background-slider" id="backgroundSlider">
+            <div class="slides-container" id="slidesContainer">
+                <!-- Слайды будут добавлены через JavaScript -->
+            </div>
+        </div>
+
+        <!-- ===== ЗАГОЛОВОК "ЗАВОД СЭНДВИЧ-ПАНЕЛЕЙ" (АВТОНОМНЫЙ) ===== -->
+        <div class="hero-title-main" id="heroTitleMain">
+            <div class="hero-title-main-text">ЗАВОД СЭНДВИЧ-ПАНЕЛЕЙ</div>
+        </div>
+
+        <!-- ===== ЗАГОЛОВОК "ЕДИНСТВЕННЫЙ В КАРЕЛИИ" (АВТОНОМНЫЙ) ===== -->
+        <div class="hero-title-sub" id="heroTitleSub">
+            <div class="hero-title-sub-text">ЕДИНСТВЕННЫЙ В КАРЕЛИИ</div>
+        </div>
+
+        <!-- ===== ПРЕИМУЩЕСТВА (АВТОНОМНЫЙ) ===== -->
+        <div class="advantages-block" id="advantagesBlock">
+            <!-- Преимущества будут добавлены через JavaScript -->
+        </div>
+
+        <!-- ===== КНОПКА (АВТОНОМНЫЙ - СКРЫТА НА МОБИЛКЕ) ===== -->
+        <div class="action-button-block" id="actionButtonBlock">
+            <button class="action-button" id="actionButton">
+                УЗНАТЬ БОЛЬШЕ О<br>ПРОДУКЦИИ И УСЛУГАХ
+            </button>
+        </div>
+
+    </div>
+
+    <!-- ===== ВСПЛЫВАЮЩЕЕ ОКНО (АВТОНОМНЫЙ) ===== -->
+    <div class="contact-popup-overlay" id="contactPopup">
+        <div class="contact-popup">
+            <button class="contact-popup-close" onclick="closeContactPopup()">&times;</button>
+            <h2 class="contact-popup-title">Свяжитесь с нами</h2>
+            
+            <div class="contact-popup-item">
+                <svg class="contact-popup-icon" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                </svg>
+                <div class="contact-popup-text">
+                    <a href="tel:+79216288511">+7 921-628-85-11</a>
+                </div>
+            </div>
+            
+            <div class="contact-popup-item">
+                <svg class="contact-popup-icon" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                </svg>
+                <div class="contact-popup-text">
+                    <a href="mailto:sale@rkpanel.ru">sale@rkpanel.ru</a>
+                </div>
+            </div>
+            
+            <div class="contact-popup-messengers">
+                <a href="https://wa.me/79212284825" target="_blank" class="contact-popup-messenger contact-popup-whatsapp" title="WhatsApp">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111728.png" alt="WhatsApp">
+                </a>
+                <a href="https://t.me/79212284825" target="_blank" class="contact-popup-messenger contact-popup-telegram" title="Telegram">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Подключение JavaScript -->
+    <script src="slider.js"></script>
+
+</body>
+</html>

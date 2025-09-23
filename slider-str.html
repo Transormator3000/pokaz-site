@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Возведение модульных зданий - слайдер STR</title>
+    
+    <!-- Подключение Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;650;700&display=swap" rel="stylesheet">
+    
+    <!-- Подключение CSS -->
+    <link rel="stylesheet" href="slider-str.css">
+</head>
+<body>
+
+    <!-- ===== ОСНОВНОЙ КОНТЕЙНЕР (АВТОНОМНЫЙ) ===== -->
+    <div class="hero-block-container1" id="heroContainer1">
+        
+        <!-- ===== СЛАЙДЕР КАРТИНОК (АВТОНОМНЫЙ) ===== -->
+        <div class="background-slider1" id="backgroundSlider1">
+            <div class="slides-container1" id="slidesContainer1">
+                <!-- Слайды будут добавлены через JavaScript -->
+            </div>
+        </div>
+
+        <!-- ===== ЗАГОЛОВОК "ВОЗВЕДЕНИЕ МОДУЛЬНЫХ" (АВТОНОМНЫЙ) ===== -->
+        <div class="hero-title-main1" id="heroTitleMain1">
+            <div class="hero-title-main-text1">ВОЗВЕДЕНИЕ МОДУЛЬНЫХ</div>
+        </div>
+
+        <!-- ===== ЗАГОЛОВОК "ЗДАНИЙ «ПОД КЛЮЧ»" (АВТОНОМНЫЙ) ===== -->
+        <div class="hero-title-sub1" id="heroTitleSub1">
+            <div class="hero-title-sub-text1">ЗДАНИЙ «ПОД КЛЮЧ»</div>
+        </div>
+
+        <!-- ===== ПРЕИМУЩЕСТВА (АВТОНОМНЫЙ) ===== -->
+        <div class="advantages-block1" id="advantagesBlock1">
+            <!-- Преимущества будут добавлены через JavaScript -->
+        </div>
+
+        <!-- ===== КНОПКА (АВТОНОМНЫЙ - СКРЫТА НА МОБИЛКЕ) ===== -->
+        <div class="action-button-block1" id="actionButtonBlock1">
+            <button class="action-button1" id="actionButton1">
+                УЗНАТЬ БОЛЬШЕ О<br>ПРОДУКЦИИ И УСЛУГАХ
+            </button>
+        </div>
+
+    </div>
+
+    <!-- ===== НОВЫЙ БЛОК: ПРОЦЕСС СТРОИТЕЛЬСТВА (АВТОНОМНЫЙ) ===== -->
+    <div class="process-steps-container1" id="processStepsContainer1">
+        <div class="process-steps-wrapper1">
+            
+            <!-- Шаг 1: текст слева -->
+            <div class="process-step1 process-step-left1" id="processStep1">
+                <div class="process-content1">
+                    <h3 class="process-title1">Анализ и проектирование</h3>
+                    <p class="process-text1">Изучаем ваши требования, создаем индивидуальный проект и подбираем оптимальные материалы</p>
+                </div>
+                <div class="process-circle1">
+                    <span class="process-number1">1</span>
+                </div>
+                <div class="process-line1"></div>
+            </div>
+
+            <!-- Шаг 2: текст справа -->
+            <div class="process-step1 process-step-right1" id="processStep2">
+                <div class="process-line1"></div>
+                <div class="process-circle1">
+                    <span class="process-number1">2</span>
+                </div>
+                <div class="process-content1">
+                    <h3 class="process-title1">Производство конструкций</h3>
+                    <p class="process-text1">Изготавливаем металлоконструкции и сэндвич-панели на собственном производстве</p>
+                </div>
+            </div>
+
+            <!-- Шаг 3: текст слева -->
+            <div class="process-step1 process-step-left1" id="processStep3">
+                <div class="process-content1">
+                    <h3 class="process-title1">Подготовка площадки</h3>
+                    <p class="process-text1">Выполняем земляные работы, заливаем фундамент и подготавливаем коммуникации</p>
+                </div>
+                <div class="process-circle1">
+                    <span class="process-number1">3</span>
+                </div>
+                <div class="process-line1"></div>
+            </div>
+
+            <!-- Шаг 4: текст справа -->
+            <div class="process-step1 process-step-right1" id="processStep4">
+                <div class="process-line1"></div>
+                <div class="process-circle1">
+                    <span class="process-number1">4</span>
+                </div>
+                <div class="process-content1">
+                    <h3 class="process-title1">Монтаж конструкции</h3>
+                    <p class="process-text1">Устанавливаем металлический каркас и монтируем сэндвич-панели</p>
+                </div>
+            </div>
+
+            <!-- Шаг 5: текст слева с линией -->
+            <div class="process-step1 process-step-left1" id="processStep5">
+                <div class="process-content1">
+                    <h3 class="process-title1">Сдача объекта</h3>
+                    <p class="process-text1">Завершаем отделочные работы, подключаем коммуникации и сдаем готовое здание</p>
+                </div>
+                <div class="process-circle1">
+                    <span class="process-number1">5</span>
+                </div>
+                <div class="process-line1"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ===== ВСПЛЫВАЮЩЕЕ ОКНО (АВТОНОМНЫЙ) ===== -->
+    <div class="contact-popup-overlay1" id="contactPopup1">
+        <div class="contact-popup1">
+            <button class="contact-popup-close1" onclick="closeContactPopup1()">&times;</button>
+            <h2 class="contact-popup-title1">Свяжитесь с нами</h2>
+            
+            <div class="contact-popup-item1">
+                <svg class="contact-popup-icon1" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                </svg>
+                <div class="contact-popup-text1">
+                    <a href="tel:+79216288511">+7 921-628-85-11</a>
+                </div>
+            </div>
+            
+            <div class="contact-popup-item1">
+                <svg class="contact-popup-icon1" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                </svg>
+                <div class="contact-popup-text1">
+                    <a href="mailto:sale@rkpanel.ru">sale@rkpanel.ru</a>
+                </div>
+            </div>
+            
+            <div class="contact-popup-messengers1">
+                <a href="https://wa.me/79212284825" target="_blank" class="contact-popup-messenger1 contact-popup-whatsapp1" title="WhatsApp">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111728.png" alt="WhatsApp">
+                </a>
+                <a href="https://t.me/79212284825" target="_blank" class="contact-popup-messenger1 contact-popup-telegram1" title="Telegram">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Подключение JavaScript -->
+    <script src="slider-str.js"></script>
+
+</body>
+</html>

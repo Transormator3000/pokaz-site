@@ -1,0 +1,362 @@
+/* Сброс стилей */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    background-color: #ffffff;
+    min-height: 100vh;
+}
+
+/* ===== ОСНОВНОЙ КОНТЕЙНЕР ПОДВАЛА ===== */
+.footer-container {
+    position: relative;
+    width: 100%;
+    min-height: 200px;
+    margin-top: auto;
+}
+
+/* ===== БЛОК ФОНА ===== */
+.footer-background-block {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+    z-index: 1;
+}
+
+.footer-background-block::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.671);
+}
+
+/* ===== БЛОК КОНТЕНТА ПОДВАЛА ===== */
+.footer-content-block {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 30px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ===== БЛОК КОНТАКТОВ (ЛЕВАЯ ЧАСТЬ) ===== */
+.footer-contacts-block {
+    flex: 1;
+    max-width: 400px;
+    margin-right: 40px;
+}
+
+.contacts-header {
+    font-size: 20px;
+    font-weight: 700;
+    color: #ff6b35;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.contacts-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    padding: 8px 0;
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 1.4;
+    letter-spacing: 0.02em;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+.contacts-icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 12px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    fill: #ff6b35;
+}
+
+.contacts-item a {
+    color: #ff6b35;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    letter-spacing: 0.02em;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+.contacts-item a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* ===== БЛОК КОПИРАЙТА И ИНФОРМАЦИИ (ПРАВАЯ ЧАСТЬ) ===== */
+.footer-info-block {
+    flex: 1;
+    max-width: 300px;
+    text-align: center;
+}
+
+.footer-copyright {
+    color: #cccccc;
+    font-size: 16px;
+    margin-bottom: 15px;
+    line-height: 1.4;
+    letter-spacing: 0.02em;
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.footer-copyright a {
+    color: #ff6b35;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    letter-spacing: 0.02em;
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.footer-copyright a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.footer-studio-link {
+    color: #cccccc;
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.3s ease;
+    letter-spacing: 0.02em;
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.footer-studio-link:hover {
+    color: #ff6b35;
+}
+
+.footer-studio-link span {
+    color: #ff6b35;
+    font-weight: 600;
+}
+
+/* ИСПРАВЛЕННАЯ КНОПКА - ПРОСТАЯ ЖИРНАЯ ОРАНЖЕВАЯ */
+.footer-director-link {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 24px;
+    background: #ff6b35;
+    border: none;
+    border-radius: 0;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.footer-director-link:hover {
+    background: #e55a32;
+    color: #ffffff;
+    transform: scale(1.05);
+}
+
+.footer-director-link:active {
+    transform: scale(0.98);
+}
+
+/* ===== БЛОК МЕССЕНДЖЕРОВ (ТЕПЕРЬ ПОД КНОПКОЙ) ===== */
+.footer-messengers-block {
+    margin-top: 20px;
+}
+
+.footer-messenger-buttons {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-messenger-buttons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.footer-messenger-buttons a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.footer-messenger-buttons img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+.footer-messenger-buttons a:hover img {
+    transform: scale(1.1);
+}
+
+/* SVG иконки встроенные */
+.svg-icon {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    fill: #ff6b35;
+}
+
+/* ===== АДАПТИВНОСТЬ ===== */
+@media (max-width: 768px) {
+    .footer-content-block {
+        flex-direction: column;
+        gap: 30px;
+        padding: 25px 15px;
+        text-align: center; /* ЦЕНТРИРУЕМ ВСЕ */
+        align-items: center; /* ЦЕНТРИРУЕМ FLEX ЭЛЕМЕНТЫ */
+    }
+    
+    .footer-contacts-block {
+        margin-right: 0;
+        max-width: 100%;
+        text-align: center; /* ЦЕНТРИРУЕМ ВЕСЬ БЛОК КОНТАКТОВ */
+    }
+    
+    .footer-info-block {
+        max-width: 100%;
+        text-align: center; /* ЦЕНТРИРУЕМ БЛОК ИНФОРМАЦИИ */
+    }
+    
+    /* ЦЕНТРИРУЕМ ЗАГОЛОВОК КОНТАКТОВ */
+    .contacts-header {
+        font-size: 18px;
+        text-align: center; /* ЗАГОЛОВОК ПО ЦЕНТРУ */
+    }
+    
+    /* ЦЕНТРИРУЕМ КАЖДЫЙ ЭЛЕМЕНТ КОНТАКТОВ */
+    .contacts-item {
+        justify-content: center; /* ЦЕНТРИРУЕМ FLEX ЭЛЕМЕНТ */
+        text-align: center; /* ЦЕНТРИРУЕМ ТЕКСТ */
+        margin: 0 auto 15px auto; /* ЦЕНТРИРУЕМ БЛОК И ОТСТУП СНИЗУ */
+        display: flex;
+        align-items: center;
+    }
+    
+    /* ЦЕНТРИРУЕМ КОПИРАЙТ */
+    .footer-copyright {
+        font-size: 14px;
+        text-align: center; /* КОПИРАЙТ ПО ЦЕНТРУ */
+        margin: 0 auto 15px auto; /* ЦЕНТРИРУЕМ БЛОК */
+    }
+    
+    /* ЦЕНТРИРУЕМ ССЫЛКУ НА СТУДИЮ */
+    .footer-studio-link {
+        text-align: center; /* ССЫЛКА ПО ЦЕНТРУ */
+        display: block; /* ДЕЛАЕМ БЛОЧНЫМ ДЛЯ ЦЕНТРИРОВАНИЯ */
+        margin: 0 auto; /* ЦЕНТРИРУЕМ БЛОК */
+    }
+    
+    /* ЦЕНТРИРУЕМ КНОПКУ ДИРЕКТОРА С УВЕЛИЧЕННЫМИ ОТСТУПАМИ ОТ КРАЕВ */
+    .footer-director-link {
+        display: block; /* ДЕЛАЕМ БЛОЧНЫМ */
+        margin: 15px 24px 0 24px; /* УВЕЛИЧЕННЫЕ ОТСТУПЫ ОТ КРАЕВ 24px */
+        text-align: center; /* ТЕКСТ ПО ЦЕНТРУ */
+        width: calc(100% - 48px); /* ШИРИНА МИНУС ОТСТУПЫ */
+        max-width: 300px; /* МАКСИМАЛЬНАЯ ШИРИНА */
+        min-width: 160px; /* МИНИМАЛЬНАЯ ШИРИНА */
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    /* ЦЕНТРИРУЕМ БЛОК МЕССЕНДЖЕРОВ */
+    .footer-messengers-block {
+        margin-top: 20px;
+        text-align: center; /* ВЕСЬ БЛОК ПО ЦЕНТРУ */
+    }
+    
+    .footer-messenger-buttons {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        justify-content: center; /* КНОПКИ ПО ЦЕНТРУ */
+        margin: 0 auto; /* БЛОК КНОПОК ПО ЦЕНТРУ */
+    }
+    
+    .footer-messenger-buttons a {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .footer-messenger-buttons img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .footer-content-block {
+        padding: 20px 10px;
+        text-align: center; /* ЦЕНТРИРУЕМ ВСЕ */
+        align-items: center; /* ЦЕНТРИРУЕМ FLEX ЭЛЕМЕНТЫ */
+    }
+    
+    .contacts-header {
+        font-size: 18px;
+        text-align: center; /* ЗАГОЛОВОК ПО ЦЕНТРУ */
+    }
+    
+    .contacts-item {
+        font-size: 15px;
+        justify-content: center; /* ЦЕНТРИРУЕМ ЭЛЕМЕНТЫ */
+        text-align: center; /* ТЕКСТ ПО ЦЕНТРУ */
+        margin: 0 auto 15px auto; /* ЦЕНТРИРУЕМ БЛОКИ */
+    }
+    
+    .footer-copyright {
+        font-size: 14px;
+        text-align: center; /* КОПИРАЙТ ПО ЦЕНТРУ */
+        margin: 0 auto 15px auto; /* ЦЕНТРИРУЕМ */
+    }
+    
+    /* КНОПКА ДИРЕКТОРА С УВЕЛИЧЕННЫМИ ОТСТУПАМИ НА МАЛЕНЬКИХ ЭКРАНАХ */
+    .footer-director-link {
+        font-size: 14px;
+        padding: 10px 20px;
+        display: block; /* БЛОЧНЫЙ ЭЛЕМЕНТ */
+        margin: 15px 20px 0 20px; /* УВЕЛИЧЕННЫЕ ОТСТУПЫ ОТ КРАЕВ 20px */
+        text-align: center; /* ТЕКСТ ПО ЦЕНТРУ */
+        width: calc(100% - 40px); /* ШИРИНА МИНУС ОТСТУПЫ */
+        max-width: 280px; /* МАКСИМАЛЬНАЯ ШИРИНА */
+        min-width: 140px; /* МИНИМАЛЬНАЯ ШИРИНА */
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .footer-studio-link {
+        text-align: center; /* ССЫЛКА ПО ЦЕНТРУ */
+        display: block; /* БЛОЧНЫЙ ДЛЯ ЦЕНТРИРОВАНИЯ */
+        margin: 0 auto; /* ЦЕНТРИРУЕМ */
+    }
+}
+

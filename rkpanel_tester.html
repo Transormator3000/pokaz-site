@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Группа компаний СТРОЙХОЛДИНГ</title>
+    
+    <!-- Подключение шрифта Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Подключение всех внешних CSS файлов -->
+    <link rel="stylesheet" href="welcome.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="slider.css">
+    <link rel="stylesheet" href="partners.css">
+    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="rkpanel_tester.css">
+    <link rel="stylesheet" href="rkpanel_pages.css">
+</head>
+<body>
+    <!-- == БЛОК 1: СТАРТОВАЯ ПРИВЕТСТВЕННАЯ СТРАНИЦА == -->
+    <div class="block-wrapper welcome-block" id="startupPage">
+        <div class="startup-page">
+            <div class="startup-content">
+                <img src="https://i.ibb.co/rRmFWrZK/1-Photoroom-1-Picsart-Background-Remover.png" alt="Логотип" class="startup-logo">
+                <div class="startup-company-subtitle">ГРУППА КОМПАНИЙ</div>
+                <div class="startup-company-title">СТРОЙХОЛДИНГ</div>
+                
+                <!-- ДВА РАЗНЫХ ТЕКСТА -->
+                <div class="startup-welcome">ДОБРО ПОЖАЛОВАТЬ</div>
+                <div class="startup-loading">ЗАГРУЗКА...</div>
+                <div class="loading-spinner"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- == БЛОК 2: МОДУЛЬНАЯ ШАПКА == -->
+    <div class="block-wrapper header-block" id="mainSite">
+        <div class="header-container">
+            <div class="background-block" id="backgroundBlock"></div>
+            <div class="grid-container" id="gridContainer"></div>
+            <div class="photos-strip-block" id="photosStripBlock">
+                <div class="photos-strip-slider" id="photosSlider"></div>
+            </div>
+            <div class="photos-overlay" id="photosOverlay"></div>
+            
+            <div class="content-block" id="contentBlock">
+                <div class="content-wrapper">
+                    <div class="logo-block" id="logoBlock">
+                        <img src="https://i.ibb.co/rRmFWrZK/1-Photoroom-1-Picsart-Background-Remover.png" alt="Логотип ГК СТРОЙХОЛДИНГ">
+                    </div>
+                    <div class="company-name-block" id="companyNameBlock">
+                        <div class="company-subtitle">ГРУППА КОМПАНИЙ</div>
+                        <h2 class="company-title">СТРОЙХОЛДИНГ</h2>
+                    </div>
+                    <div class="phone-block" id="phoneBlock">
+                        <a href="tel:+79216288511">+7 921-628-85-11</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="desktop-navigation-block" id="desktopNavigationBlock">
+                <ul class="desktop-navigation-list">
+                    <li class="desktop-navigation-item"><a href="rkpanel_tester.html" class="desktop-menu-link" data-page="rkpanel_tester.html">Главная</a></li>
+                    <li class="desktop-navigation-item"><a href="rkpanel_str.html" class="desktop-menu-link" data-page="rkpanel_str.html">Строительство "под ключ"</a></li>
+                    <li class="desktop-navigation-item"><a href="rkpanel_sp.html" class="desktop-menu-link" data-page="rkpanel_sp.html">Сэндвич-панели</a></li>
+                    <li class="desktop-navigation-item"><a href="rkpanel_met.html" class="desktop-menu-link" data-page="rkpanel_met.html">Металлоконструкции</a></li>
+                    <li class="desktop-navigation-item"><a href="rkpanel_tec.html" class="desktop-menu-link" data-page="rkpanel_tec.html">Спецтехника</a></li>
+                    <li class="desktop-navigation-item"><a href="rkpanel_contact.html" class="desktop-menu-link" data-page="rkpanel_contact.html">Контакты</a></li>
+                </ul>
+            </div>
+            
+            <div class="mobile-navigation-block" id="mobileNavigationBlock">
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+                <div class="mobile-menu-dropdown" id="mobileMenuDropdown">
+                    <ul class="mobile-navigation-list">
+                        <li class="mobile-navigation-item"><a href="rkpanel_tester.html" class="mobile-menu-link" data-page="rkpanel_tester.html">Главная</a></li>
+                        <li class="mobile-navigation-item"><a href="rkpanel_str.html" class="mobile-menu-link" data-page="rkpanel_str.html">Строительство "под ключ"</a></li>
+                        <li class="mobile-navigation-item"><a href="rkpanel_sp.html" class="mobile-menu-link" data-page="rkpanel_sp.html">Сэндвич-панели</a></li>
+                        <li class="mobile-navigation-item"><a href="rkpanel_met.html" class="mobile-menu-link" data-page="rkpanel_met.html">Металлоконструкции</a></li>
+                        <li class="mobile-navigation-item"><a href="rkpanel_tec.html" class="mobile-menu-link" data-page="rkpanel_tec.html">Спецтехника</a></li>
+                        <li class="mobile-navigation-item"><a href="rkpanel_contact.html" class="mobile-menu-link" data-page="rkpanel_contact.html">Контакты</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- == БЛОК 3: HERO-СЛАЙДЕР == -->
+    <div class="block-wrapper slider-block" id="sliderBlock">
+        <div class="hero-block-container" id="heroContainer">
+            <div class="background-slider" id="backgroundSlider">
+                <div class="slides-container" id="slidesContainer"></div>
+            </div>
+            <div class="hero-title-main" id="heroTitleMain">
+                <h1 class="hero-title-main-text">ЗАВОД СЭНДВИЧ-ПАНЕЛЕЙ</h1>
+            </div>
+            <div class="hero-title-sub" id="heroTitleSub">
+                <div class="hero-title-sub-text">ЕДИНСТВЕННЫЙ В КАРЕЛИИ</div>
+            </div>
+            <div class="advantages-block" id="advantagesBlock"></div>
+            <div class="action-button-block" id="actionButtonBlock">
+                <button class="action-button" id="actionButton">
+                    УЗНАТЬ БОЛЬШЕ О<br>ПРОДУКЦИИ И УСЛУГАХ
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- == БЛОК 4: НАШИ ПАРТНЕРЫ == -->
+    <div class="block-wrapper partners-block" id="partnersBlock">
+        <div class="typography widget_text">
+            <div class="partners-custom-block">
+                <h4 class="sideWidget_heading custom-heading">Наши партнеры</h4>
+                <div class="partners-custom-block-content" id="partnersContainer">
+                    <div class="fade-in">
+                        <img src="https://rkpanel.ru/assets/lander/logo-rockwool.png" 
+                             alt="Rockwool" 
+                             title="Rockwool - изоляционные материалы"
+                             onclick="openPartnerLink('https://www.rockwool.com/ru/')">
+                    </div>
+                    <div class="fade-in">
+                        <img src="https://rkpanel.ru/assets/lander/logo-knauf.png" 
+                             alt="Knauf" 
+                             title="Knauf - строительные материалы"
+                             onclick="openPartnerLink('https://www.knauf.ru/')">
+                    </div>
+                    <div class="fade-in">
+                        <img src="https://rkpanel.ru/assets/lander/logo-severstal.png" 
+                             alt="Северсталь" 
+                             title="Северсталь - металлургический холдинг"
+                             onclick="openPartnerLink('https://www.severstal.com/')">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- == БЛОК 5: ОСНОВНЫЕ ВИДЫ ДЕЯТЕЛЬНОСТИ == -->
+    <div class="block-wrapper services-block" id="servicesBlock">
+        <div class="services-section">
+            <h2 class="section-title">Основные виды деятельности</h2>
+            <div class="services-grid">
+                <div class="service-card" data-service="sandwich">
+                    <div class="service-image-container">
+                        <img src="https://rkpanel.ru/assets/lander/service-sandwich.png" 
+                             alt="Сэндвич-панели" class="service-image">
+                    </div>
+                    <h3 class="service-title">Сэндвич-панели</h3>
+                </div>
+                <div class="service-card" data-service="metal">
+                    <div class="service-image-container">
+                        <img src="https://i.ibb.co/yn3cJQfr/834-original.jpg" 
+                             alt="Металлоконструкции" class="service-image">
+                    </div>
+                    <h3 class="service-title">Металлоконструкции</h3>
+                </div>
+                <div class="service-card" data-service="building">
+                    <div class="service-image-container">
+                        <img src="https://rkpanel.ru/assets/lander/service-building.png" 
+                             alt="Строительство зданий" class="service-image">
+                    </div>
+                    <h3 class="service-title">Строительство зданий</h3>
+                </div>
+                <div class="service-card" data-service="machinery">
+                    <div class="service-image-container">
+                        <img src="https://rkpanel.ru/assets/lander/service-machinery.png" 
+                             alt="Услуги спецтехники" class="service-image">
+                    </div>
+                    <h3 class="service-title">Услуги спецтехники</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- == БЛОК 6: ПОДВАЛ == -->
+    <div class="block-wrapper footer-block" id="footerBlock">
+        <footer class="footer-container" id="footerContainer">
+            <div class="footer-background-block" id="footerBackgroundBlock"></div>
+            <div class="footer-messengers-block" id="footerMessengersBlock">
+                <div class="footer-messenger-buttons">
+                    <a href="https://wa.me/79216288511" target="_blank" title="Написать в WhatsApp">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111728.png" alt="WhatsApp">
+                    </a>
+                    <a href="https://t.me/79216288511" target="_blank" title="Написать в Telegram">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram">
+                    </a>
+                </div>
+            </div>
+            <div class="footer-content-block" id="footerContentBlock">
+                <div class="footer-contacts-block" id="footerContactsBlock">
+                    <h3 class="contacts-header">Связаться с нами</h3>
+                    <div class="contacts-item">
+                        <svg class="contacts-icon" viewBox="0 0 24 24">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                        </svg>
+                        <div>185032, г. Петрозаводск,<br>проезд Энергетиков, 33</div>
+                    </div>
+                    <div class="contacts-item">
+                        <svg class="contacts-icon" viewBox="0 0 24 24">
+                            <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/>
+                        </svg>
+                        <div>8:00 - 17:00 будни<br>сб, вс - выходной</div>
+                    </div>
+                    <div class="contacts-item">
+                        <svg class="contacts-icon" viewBox="0 0 24 24">
+                            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                        </svg>
+                        <div>Отдел продаж <a href="tel:+79216288511">+7 921-628-85-11</a></div>
+                    </div>
+                    <div class="contacts-item">
+                        <svg class="contacts-icon" viewBox="0 0 24 24">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                        <div><a href="mailto:sale@rkpanel.ru">sale@rkpanel.ru</a></div>
+                    </div>
+                </div>
+                <div class="footer-info-block" id="footerInfoBlock">
+                    <div class="footer-copyright">2019 © RKpanel</div>
+                    
+                    <div>
+                        <a href="https://wa.me/79212284825" target="_blank" class="footer-director-link">
+                            Написать письмо директору
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+    <!-- == ВСПЛЫВАЮЩЕЕ ОКНО КОНТАКТОВ == -->
+    <div class="contact-popup-overlay" id="contactPopup">
+        <div class="contact-popup">
+            <button class="contact-popup-close" onclick="closeContactPopup()">&times;</button>
+            <h2 class="contact-popup-title">Свяжитесь с нами</h2>
+            <div class="contact-popup-item">
+                <svg class="contact-popup-icon" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                </svg>
+                <div class="contact-popup-text">
+                    <a href="tel:+79216288511">+7 921-628-85-11</a>
+                </div>
+            </div>
+            <div class="contact-popup-item">
+                <svg class="contact-popup-icon" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                </svg>
+                <div class="contact-popup-text">
+                    <a href="mailto:sale@rkpanel.ru">sale@rkpanel.ru</a>
+                </div>
+            </div>
+            <div class="contact-popup-messengers">
+                <a href="https://wa.me/79212284825" target="_blank" class="contact-popup-messenger contact-popup-whatsapp" title="WhatsApp">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111728.png" alt="WhatsApp">
+                </a>
+                <a href="https://t.me/79212284825" target="_blank" class="contact-popup-messenger contact-popup-telegram" title="Telegram">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram">
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Подключение всех внешних JavaScript файлов -->
+    <script src="welcome.js"></script>
+    <script src="header.js"></script>
+    <script src="slider.js"></script>
+    <script src="partners.js"></script>
+    <script src="cart.js"></script>
+    <script src="footer.js"></script>
+    <script src="list-ls.js"></script>
+
+
+    <noscript><div><img src="https://mc.yandex.ru/watch/48298379" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+</body>
+</html>

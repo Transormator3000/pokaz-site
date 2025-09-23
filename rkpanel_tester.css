@@ -1,0 +1,126 @@
+/* Изоляция блоков */
+.block-wrapper {
+    all: initial;
+    font-family: inherit;
+    display: block;
+    position: relative;
+    isolation: isolate;
+    contain: layout style;
+}
+
+.welcome-block {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10000;
+    background: #000000;
+}
+
+.header-block {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    margin-top: 0;
+    margin-bottom: 0;
+    opacity: 0;
+    z-index: 9999;
+    transition: opacity 0.3s ease;
+}
+
+.slider-block, 
+.partners-block {
+    display: block;
+    clear: both;
+    overflow: hidden;
+    position: relative;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.services-block {
+    display: block;
+    clear: both;
+    overflow: hidden;
+    position: relative;
+    margin-top: 40px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.footer-block {
+    display: block;
+    clear: both;
+    overflow: hidden;
+    position: relative;
+    margin-top: 40px;
+    margin-bottom: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Классы для показа блоков */
+.content-visible {
+    opacity: 1 !important;
+}
+
+/* ДОПОЛНИТЕЛЬНЫЕ СТИЛИ ДЛЯ СТАРТОВОГО ЭКРАНА */
+.startup-loading {
+    font-size: 24px;
+    color: #ff6b35;
+    font-weight: 500;
+    font-family: 'Montserrat', Arial, sans-serif;
+    display: none; /* По умолчанию скрыто */
+}
+
+.loading-spinner {
+    width: 30px;
+    height: 30px;
+    border: 3px solid #333;
+    border-top: 3px solid #ff6b35;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 20px auto 0;
+    display: none; /* По умолчанию скрыт */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+    .startup-loading {
+        font-size: 18px;
+    }
+    
+    .loading-spinner {
+        width: 25px;
+        height: 25px;
+        border-width: 2px;
+    }
+}
+
+@media (max-width: 480px) {
+    .startup-loading {
+        font-size: 16px;
+    }
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+    display: block;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}

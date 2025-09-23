@@ -1,0 +1,636 @@
+/* ===== СБРОС СТИЛЕЙ ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    background-color: #ffffff;
+}
+
+/* ===== ОСНОВНОЙ КОНТЕЙНЕР ШАПКИ ===== */
+.header-container {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+/* ===== БЛОК ФОНА (независимый модуль) ===== */
+.background-block {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+    z-index: 1;
+}
+
+.background-block::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+/* ===== БЛОК ИДЕАЛЬНО БЕСШОВНОЙ СТРОКИ ФОТОГРАФИЙ (независимый модуль) ===== */
+.photos-strip-block {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 3;
+}
+
+.photos-strip-slider {
+    display: flex;
+    height: 100%;
+    width: 300%;
+    animation: photosStripMove 80s linear infinite;
+}
+
+/* РАЗМЕРЫ .photo-item УПРАВЛЯЮТСЯ JS - НЕ ЗАДАЕМ width ЗДЕСЬ */
+.photo-item {
+    flex-shrink: 0;
+    height: 100%;
+    /* width УДАЛЕН - управляется HeaderLoadingTracker */
+    position: relative;
+    overflow: hidden;
+    clip-path: polygon(45px 0, 100% 0, calc(100% - 45px) 100%, 0 100%);
+    margin-right: -45px;
+}
+
+.photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+@keyframes photosStripMove {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-66.666%); }
+}
+
+/* ===== ЧЕРНЫЙ ПОЛУПРОЗРАЧНЫЙ СЛОЙ ПОВЕРХ ФОТОГРАФИЙ (независимый модуль) ===== */
+.photos-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.87);
+    z-index: 4;
+    pointer-events: none;
+}
+
+/* ===== БЛОК КОНТЕНТА (независимый модуль) ===== */
+.content-block {
+    position: relative;
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    z-index: 5;
+    overflow: visible !important;
+}
+
+.content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    max-width: 800px;
+    width: 100%;
+    overflow: visible !important;
+}
+
+/* ===== БЛОК ЛОГОТИПА (независимый модуль) ===== */
+.logo-block {
+    flex-shrink: 0;
+}
+
+.logo-block img {
+    height: 90px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo-block img:hover {
+    transform: scale(1.05);
+}
+
+/* ===== БЛОК НАЗВАНИЯ КОМПАНИИ (независимый модуль) ===== */
+.company-name-block {
+    flex-shrink: 0;
+    text-align: center;
+}
+
+.company-name-block .company-subtitle {
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: #ff6b35;
+    letter-spacing: 0.3em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    text-transform: uppercase;
+    white-space: nowrap;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.company-name-block .company-title {
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 1.5px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    white-space: nowrap;
+    margin: 0;
+    margin-top: 5px;
+    line-height: 1;
+}
+
+/* ===== БЛОК ТЕЛЕФОНА (независимый модуль) ===== */
+.phone-block {
+    flex-shrink: 0;
+}
+
+.phone-block a {
+    font-size: 28px;
+    font-weight: 400;
+    color: #ff6b35;
+    text-decoration: none;
+    letter-spacing: 1.2px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    white-space: nowrap;
+    transition: color 0.3s;
+}
+
+.phone-block a:hover {
+    color: #ffffff;
+}
+
+/* ===== ДЕСКТОПНАЯ НАВИГАЦИЯ (независимый модуль - только для PC) ===== */
+.desktop-navigation-block {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    padding: 0 10px;
+    height: 60px;
+    align-items: center;
+}
+
+.desktop-navigation-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.desktop-navigation-item {
+    position: relative;
+}
+
+.desktop-menu-link {
+    display: block;
+    padding: 1.375rem 1rem 1rem;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    font-size: 0.875rem;
+    font-weight: 650;
+    line-height: 1;
+    color: #f0f0f0;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-bottom: 0.25rem solid transparent;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.desktop-menu-link:hover {
+    color: #ff6b35;
+    border-bottom-color: #ff6b35;
+    transform: translateY(-1px);
+}
+
+.desktop-menu-link.active {
+    color: #ff6b35;
+    border-bottom-color: #ff6b35;
+}
+
+/* ===== МОБИЛЬНАЯ НАВИГАЦИЯ (независимый модуль - только для мобилки) ===== */
+.mobile-navigation-block {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    z-index: 100000;
+    display: none;
+    isolation: isolate;
+    width: 30px;
+    height: 24px;
+}
+
+/* Гамбургер кнопка */
+.mobile-menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 100001;
+    position: relative;
+}
+
+/* ГРАДУИРОВАННЫЕ ЛИНИИ ГАМБУРГЕРА */
+.hamburger-line {
+    height: 3px;
+    background-color: #ff6b35;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.hamburger-line:nth-child(1) {
+    width: 100%;
+}
+
+.hamburger-line:nth-child(2) {
+    width: 85%;
+}
+
+.hamburger-line:nth-child(3) {
+    width: 70%;
+}
+
+.mobile-menu-toggle.active .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+    width: 100%;
+}
+
+.mobile-menu-toggle.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+    width: 100%;
+}
+
+/* Выпадающее меню - ПОВЕРХ ВСЕГО ВКЛЮЧАЯ КНОПКУ */
+.mobile-menu-dropdown {
+    position: fixed;
+    top: 40px;
+    right: 0;
+    background: rgba(26, 26, 26, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    min-width: 250px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transform: translateY(-10px) translateZ(0);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 100002;
+    
+    /* ФИКСЫ ДЛЯ МОБИЛЬНЫХ БРАУЗЕРОВ */
+    -webkit-transform: translateY(-10px) translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    isolation: isolate;
+    will-change: transform, opacity;
+}
+
+.mobile-menu-dropdown.active {
+    transform: translateY(0) translateZ(0);
+    -webkit-transform: translateY(0) translateZ(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobile-navigation-list {
+    list-style: none;
+    margin: 0;
+    padding: 10px 0;
+}
+
+.mobile-navigation-item {
+    margin: 0;
+}
+
+.mobile-menu-link {
+    display: block;
+    padding: 12px 20px;
+    font-family: 'Montserrat', Arial, sans-serif !important;
+    font-size: 14px;
+    font-weight: 500 !important;
+    color: #f0f0f0;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+    text-align: left !important;
+}
+
+.mobile-menu-link:hover,
+.mobile-menu-link.active {
+    color: #ff6b35;
+    background: rgba(255, 107, 53, 0.1);
+    border-left-color: #ff6b35;
+    font-weight: 500 !important;
+    text-align: left !important;
+}
+
+/* ===== АДАПТИВНОСТЬ ===== */
+@media (max-width: 1179px) {
+    /* Скрываем десктопную навигацию */
+    .desktop-navigation-block {
+        display: none;
+    }
+    
+    /* Показываем мобильную навигацию */
+    .mobile-navigation-block {
+        display: block;
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        top: auto;
+        right: auto;
+        z-index: 100000;
+        isolation: isolate;
+        width: 30px;
+        height: 24px;
+    }
+    
+    .header-container {
+        height: 235px;
+        margin-bottom: 15px;
+    }
+    
+    /* width для .photo-item управляется JS */
+    .photo-item {
+        clip-path: polygon(30px 0, 100% 0, calc(100% - 30px) 100%, 0 100%);
+        margin-right: -30px;
+    }
+    
+    .content-block {
+        height: 200px;
+        padding: 25px 20px 0;
+        overflow: visible !important;
+    }
+    
+    .content-wrapper {
+        flex-direction: column;
+        gap: 18px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        max-width: none;
+        overflow: visible !important;
+    }
+    
+    .logo-block {
+        order: 1;
+    }
+    
+    .logo-block img {
+        height: 56px;
+    }
+    
+    .company-name-block {
+        order: 2;
+    }
+    
+    .company-name-block .company-subtitle {
+        font-size: 15px;
+        letter-spacing: 0.25em;
+        line-height: 1.1;
+        margin: 0;
+    }
+    
+    .company-name-block .company-title {
+        font-size: 25px;
+        margin-top: 4px;
+        line-height: 1;
+        letter-spacing: 1px;
+    }
+    
+    .phone-block {
+        order: 3;
+    }
+    
+    .phone-block a {
+        font-size: 21px;
+        letter-spacing: 1px;
+    }
+    
+    /* КОМПАКТНОЕ МОБИЛЬНОЕ МЕНЮ */
+    .mobile-menu-dropdown {
+        position: fixed;
+        bottom: auto;
+        top: 60px;
+        left: 20px;
+        right: auto;
+        min-width: 180px;
+        z-index: 100002 !important;
+        -webkit-transform: translateY(-10px) translateZ(0);
+        transform: translateY(-10px) translateZ(0);
+        will-change: transform, opacity;
+    }
+    
+    .mobile-menu-dropdown.active {
+        opacity: 1;
+        -webkit-transform: translateY(0) translateZ(0);
+        transform: translateY(0) translateZ(0);
+    }
+    
+    .mobile-menu-link {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+    
+    /* УБИРАЕМ ТОЛЬКО ГОРИЗОНТАЛЬНЫЕ ОГРАНИЧЕНИЯ, СОХРАНЯЯ ВОЗМОЖНОСТЬ СКРОЛЛА */
+    .header-container,
+    .background-block,
+    .photos-strip-block,
+    .photos-overlay {
+        overflow-x: hidden !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-container {
+        height: 215px;
+        margin-bottom: 12px;
+    }
+    
+    /* width для .photo-item управляется JS */
+    .photo-item {
+        clip-path: polygon(22px 0, 100% 0, calc(100% - 22px) 100%, 0 100%);
+        margin-right: -22px;
+    }
+    
+    .content-block {
+        height: 180px;
+        padding: 20px 15px 0;
+        overflow: visible !important;
+    }
+    
+    .content-wrapper {
+        gap: 15px;
+        overflow: visible !important;
+    }
+    
+    .logo-block img {
+        height: 46px;
+    }
+    
+    .company-name-block .company-subtitle {
+        font-size: 13px;
+        letter-spacing: 0.2em;
+        margin: 0;
+    }
+    
+    .company-name-block .company-title {
+        font-size: 21px;
+        margin-top: 3px;
+        letter-spacing: 0.8px;
+    }
+    
+    .phone-block a {
+        font-size: 18px;
+        letter-spacing: 0.8px;
+    }
+    
+    .mobile-menu-toggle {
+        width: 28px;
+        height: 22px;
+    }
+    
+    .hamburger-line:nth-child(1) {
+        width: 100%;
+    }
+    
+    .hamburger-line:nth-child(2) {
+        width: 85%;
+    }
+    
+    .hamburger-line:nth-child(3) {
+        width: 70%;
+    }
+    
+    .mobile-navigation-block {
+        bottom: 15px;
+        left: 15px;
+        z-index: 100000 !important;
+        width: 28px;
+        height: 22px;
+    }
+    
+    .mobile-menu-dropdown {
+        min-width: 160px;
+        top: 50px;
+        left: 15px;
+        z-index: 100002 !important;
+    }
+    
+    .mobile-menu-link {
+        padding: 9px 12px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 360px) {
+    .header-container {
+        height: 195px;
+        margin-bottom: 10px;
+    }
+    
+    .content-block {
+        height: 160px;
+        padding: 18px 12px 0;
+        overflow: visible !important;
+    }
+    
+    .content-wrapper {
+        gap: 12px;
+        overflow: visible !important;
+    }
+    
+    .logo-block img {
+        height: 39px;
+    }
+    
+    .company-name-block .company-subtitle {
+        font-size: 11px;
+        letter-spacing: 0.15em;
+        margin: 0;
+    }
+    
+    .company-name-block .company-title {
+        font-size: 18px;
+        margin-top: 2px;
+        letter-spacing: 0.6px;
+    }
+    
+    .phone-block a {
+        font-size: 16px;
+        letter-spacing: 0.6px;
+    }
+    
+    .mobile-menu-toggle {
+        width: 25px;
+        height: 20px;
+    }
+    
+    .hamburger-line:nth-child(1) {
+        width: 100%;
+    }
+    
+    .hamburger-line:nth-child(2) {
+        width: 85%;
+    }
+    
+    .hamburger-line:nth-child(3) {
+        width: 70%;
+    }
+    
+    .mobile-navigation-block {
+        bottom: 12px;
+        left: 12px;
+        z-index: 100000 !important;
+        width: 25px;
+        height: 20px;
+    }
+    
+    .mobile-menu-dropdown {
+        min-width: 150px;
+        top: 45px;
+        left: 12px;
+        z-index: 100002 !important;
+    }
+    
+    .mobile-menu-link {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+}

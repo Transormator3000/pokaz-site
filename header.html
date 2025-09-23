@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Модульная шапка RKpanel - мобильная адаптация</title>
+
+<!-- Подключение Montserrat -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+
+<!-- Подключение CSS -->
+<link rel="stylesheet" href="header.css">
+</head>
+<body>
+
+<div class="header-container">
+    <!-- БЛОК ФОНА (независимый модуль) -->
+    <div class="background-block" id="backgroundBlock"></div>
+    
+    <!-- КОНТЕЙНЕР ДЛЯ СЕТКИ (независимый модуль) -->
+    <div class="grid-container" id="gridContainer"></div>
+    
+    <!-- БЛОК ИДЕАЛЬНО БЕСШОВНОЙ СТРОКИ ФОТОГРАФИЙ (независимый модуль) -->
+    <div class="photos-strip-block" id="photosStripBlock">
+        <div class="photos-strip-slider" id="photosSlider"></div>
+    </div>
+    
+    <!-- ЧЕРНЫЙ ПОЛУПРОЗРАЧНЫЙ СЛОЙ ПОВЕРХ ФОТОГРАФИЙ (независимый модуль) -->
+    <div class="photos-overlay" id="photosOverlay"></div>
+    
+    <!-- БЛОК КОНТЕНТА (независимый модуль) -->
+    <div class="content-block" id="contentBlock">
+        <div class="content-wrapper">
+            <!-- БЛОК ЛОГОТИПА (независимый модуль) -->
+            <div class="logo-block" id="logoBlock">
+                <img src="https://i.ibb.co/rRmFWrZK/1-Photoroom-1-Picsart-Background-Remover.png" alt="Логотип ГК СТРОЙХОЛДИНГ">
+            </div>
+            
+            <!-- БЛОК НАЗВАНИЯ КОМПАНИИ (независимый модуль) -->
+            <div class="company-name-block" id="companyNameBlock">
+                <div class="company-subtitle">ГРУППА КОМПАНИЙ</div>
+                <div class="company-title">СТРОЙХОЛДИНГ</div>
+            </div>
+            
+            <!-- БЛОК ТЕЛЕФОНА (независимый модуль) -->
+            <div class="phone-block" id="phoneBlock">
+                <a href="tel:+79216288511">+7 921-628-85-11</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- ДЕСКТОПНАЯ НАВИГАЦИЯ (независимый модуль - только для PC) -->
+    <div class="desktop-navigation-block" id="desktopNavigationBlock">
+        <ul class="desktop-navigation-list">
+            <li class="desktop-navigation-item"><a href="rkpanel_tester.html" class="desktop-menu-link" data-page="rkpanel_tester.html">Главная</a></li>
+            <li class="desktop-navigation-item"><a href="rkpanel_str.html" class="desktop-menu-link" data-page="rkpanel_str.html">Строительство "под ключ"</a></li>
+            <li class="desktop-navigation-item"><a href="rkpanel_sp.html" class="desktop-menu-link" data-page="rkpanel_sp.html">Сэндвич-панели</a></li>
+            <li class="desktop-navigation-item"><a href="rkpanel_met.html" class="desktop-menu-link" data-page="rkpanel_met.html">Металлоконструкции</a></li>
+            <li class="desktop-navigation-item"><a href="rkpanel_tec.html" class="desktop-menu-link" data-page="rkpanel_doc.html">Спецтехника</a></li>
+            <li class="desktop-navigation-item"><a href="rkpanel_contact.html" class="desktop-menu-link" data-page="rkpanel_contact.html">Контакты</a></li>
+        </ul>
+    </div>
+    
+    <!-- МОБИЛЬНАЯ НАВИГАЦИЯ (независимый модуль - только для мобилки) -->
+    <div class="mobile-navigation-block" id="mobileNavigationBlock">
+        <!-- Гамбургер кнопка -->
+        <button class="mobile-menu-toggle" id="mobileMenuToggle">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        
+        <!-- Выпадающее меню -->
+        <div class="mobile-menu-dropdown" id="mobileMenuDropdown">
+            <ul class="mobile-navigation-list">
+                <li class="mobile-navigation-item"><a href="rkpanel_tester.html" class="mobile-menu-link" data-page="rkpanel_tester.html">Главная</a></li>
+                <li class="mobile-navigation-item"><a href="rkpanel_str.html" class="mobile-menu-link" data-page="rkpanel_str.html">Строительство "под ключ"</a></li>
+                <li class="mobile-navigation-item"><a href="rkpanel_sp.html" class="mobile-menu-link" data-page="rkpanel_sp.html">Сэндвич-панели</a></li>
+                <li class="mobile-navigation-item"><a href="rkpanel_met.html" class="mobile-menu-link" data-page="rkpanel_met.html">Металлоконструкции</a></li>
+                <li class="mobile-navigation-item"><a href="rkpanel_doc.html" class="mobile-menu-link" data-page="rkpanel_doc.html">Сертификаты</a></li>
+                <li class="mobile-navigation-item"><a href="rkpanel_contact.html" class="mobile-menu-link" data-page="rkpanel_contact.html">Контакты</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Подключение JS -->
+<script src="header.js"></script>
+
+</body>
+</html>

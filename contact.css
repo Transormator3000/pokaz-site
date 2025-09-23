@@ -1,0 +1,506 @@
+/* ===== КОНТАКТНАЯ СТРАНИЦА ===== */
+
+
+/* Базовые переменные */
+:root {
+    --contact-primary-color: #ff6b35;
+    --contact-secondary-color: #e55a32;
+    --contact-dark-color: #1a1a1a;
+    --contact-light-color: #ffffff;
+    --contact-gray-color: #666666;
+    --contact-light-gray-color: #f8f9fa;
+    --contact-whatsapp-color: #25D366;
+    --contact-telegram-color: #0088CC;
+    --contact-spacing-xs: 8px;
+    --contact-spacing-sm: 16px;
+    --contact-spacing-md: 24px;
+    --contact-spacing-lg: 32px;
+    --contact-spacing-xl: 48px;
+    --contact-spacing-xxl: 64px;
+}
+
+
+/* Основной контейнер */
+.contact-main-wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 800px;
+    overflow: hidden;
+}
+
+
+.contact-main-container {
+    position: relative;
+    width: 100%;
+    min-height: 800px;
+}
+
+
+/* Фоновый блок */
+.contact-main-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--contact-light-color);
+    z-index: 1;
+}
+
+
+/* Основной контент */
+.contact-main-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: var(--contact-spacing-xxl) var(--contact-spacing-md);
+}
+
+
+/* ===== HERO СЕКЦИЯ ===== */
+.contact-hero-section {
+    text-align: center;
+    margin-bottom: var(--contact-spacing-xxl);
+    padding: var(--contact-spacing-xl) 0;
+}
+
+
+.contact-hero-content {
+    position: relative;
+}
+
+
+.contact-hero-title {
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 900;
+    letter-spacing: 3px;
+    margin-bottom: var(--contact-spacing-sm);
+    text-transform: uppercase;
+    line-height: 1.1;
+    color: var(--contact-dark-color);
+}
+
+
+.contact-hero-subtitle {
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--contact-gray-color);
+    letter-spacing: 1px;
+    margin-bottom: var(--contact-spacing-lg);
+}
+
+
+.contact-hero-line {
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--contact-primary-color), var(--contact-secondary-color));
+    margin: 0 auto;
+}
+
+
+/* ===== ИНФОРМАЦИОННАЯ СЕКЦИЯ ===== */
+.contact-info-section {
+    margin-bottom: var(--contact-spacing-xxl);
+}
+
+
+.contact-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--contact-spacing-lg);
+}
+
+
+.contact-info-card {
+    background: var(--contact-light-color);
+    padding: var(--contact-spacing-lg);
+    position: relative;
+    overflow: hidden;
+}
+
+
+.contact-info-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--contact-primary-color), var(--contact-secondary-color));
+}
+
+
+.contact-info-card-header {
+    display: flex;
+    align-items: center;
+    gap: var(--contact-spacing-sm);
+    margin-bottom: var(--contact-spacing-md);
+}
+
+
+.contact-info-card-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--contact-primary-color), var(--contact-secondary-color));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+
+.contact-info-card-svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--contact-light-color);
+}
+
+
+.contact-info-card-title {
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--contact-dark-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+.contact-info-card-body {
+    padding-left: calc(50px + var(--contact-spacing-sm));
+}
+
+
+.contact-info-card-text {
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--contact-dark-color);
+    line-height: 1.6;
+    margin-bottom: var(--contact-spacing-xs);
+}
+
+
+.contact-info-card-link {
+    color: var(--contact-primary-color);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+    display: block;
+    margin-bottom: var(--contact-spacing-xs);
+}
+
+
+.contact-info-card-link:hover {
+    color: var(--contact-secondary-color);
+    text-decoration: underline;
+}
+
+
+.contact-info-card-note {
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--contact-gray-color);
+}
+
+
+/* ===== СЕКЦИЯ МЕССЕНДЖЕРОВ ===== */
+.contact-messengers-section {
+    margin-bottom: var(--contact-spacing-xxl);
+}
+
+
+.contact-messengers-container {
+    text-align: center;
+    padding: var(--contact-spacing-xl);
+}
+
+
+.contact-messengers-title {
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--contact-dark-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: var(--contact-spacing-lg);
+}
+
+
+.contact-messengers-buttons {
+    display: flex;
+    gap: var(--contact-spacing-lg);
+    justify-content: center;
+    align-items: center;
+}
+
+
+.contact-messenger-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--contact-spacing-sm);
+    padding: var(--contact-spacing-md) var(--contact-spacing-xl);
+    text-decoration: none;
+    color: var(--contact-light-color);
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    min-width: 200px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+
+.contact-messenger-icon {
+    width: 28px;
+    height: 28px;
+}
+
+
+/* WhatsApp кнопка */
+.whatsapp-btn {
+    background: var(--contact-whatsapp-color);
+}
+
+
+.whatsapp-btn:hover {
+    background: #1ebe5a;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+}
+
+
+/* Telegram кнопка */
+.telegram-btn {
+    background: var(--contact-telegram-color);
+}
+
+
+.telegram-btn:hover {
+    background: #0077b3;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 136, 204, 0.3);
+}
+
+
+/* ===== СЕКЦИЯ КАРТЫ ===== */
+.contact-map-section {
+    margin-bottom: var(--contact-spacing-xl);
+}
+
+
+.contact-map-header {
+    text-align: center;
+    margin-bottom: var(--contact-spacing-lg);
+}
+
+
+.contact-map-header-title {
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--contact-dark-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: var(--contact-spacing-sm);
+}
+
+
+.contact-map-header-subtitle {
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--contact-gray-color);
+}
+
+
+.contact-map-container {
+    background: var(--contact-light-color);
+    overflow: hidden;
+}
+
+
+.contact-map-wrapper {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+}
+
+
+.contact-map-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--contact-primary-color), var(--contact-secondary-color));
+    z-index: 2;
+}
+
+
+.contact-map-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+
+.contact-map-info {
+    padding: var(--contact-spacing-lg);
+    text-align: center;
+    background: var(--contact-light-color);
+}
+
+
+.contact-map-info-address {
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--contact-dark-color);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+
+/* ===== АДАПТИВНОСТЬ ===== */
+@media (max-width: 1200px) {
+    .contact-info-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 768px) {
+    .contact-main-content {
+        padding: var(--contact-spacing-lg) var(--contact-spacing-sm);
+    }
+    
+    .contact-hero-section {
+        margin-bottom: var(--contact-spacing-lg);
+        padding: var(--contact-spacing-lg) 0;
+    }
+    
+    .contact-hero-title {
+        font-size: 40px;
+        letter-spacing: 2px;
+    }
+    
+    .contact-hero-subtitle {
+        font-size: 16px;
+    }
+    
+    .contact-info-grid {
+        grid-template-columns: 1fr;
+        gap: var(--contact-spacing-md);
+    }
+    
+    .contact-info-card {
+        padding: var(--contact-spacing-md);
+    }
+    
+    .contact-info-card-body {
+        padding-left: 0;
+        margin-top: var(--contact-spacing-sm);
+    }
+    
+    .contact-messengers-container {
+        padding: var(--contact-spacing-lg);
+    }
+    
+    .contact-messengers-title {
+        font-size: 24px;
+    }
+    
+    .contact-messengers-buttons {
+        flex-direction: column;
+        gap: var(--contact-spacing-md);
+    }
+    
+    .contact-messenger-btn {
+        width: 100%;
+        max-width: 300px;
+        padding: var(--contact-spacing-sm) var(--contact-spacing-md);
+        font-size: 14px;
+    }
+    
+    .contact-map-wrapper {
+        height: 350px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .contact-main-content {
+        padding: var(--contact-spacing-md) var(--contact-spacing-xs);
+    }
+    
+    .contact-hero-title {
+        font-size: 32px;
+        letter-spacing: 1px;
+    }
+    
+    .contact-hero-subtitle {
+        font-size: 14px;
+    }
+    
+    .contact-info-card {
+        padding: var(--contact-spacing-sm);
+    }
+    
+    .contact-info-card-header {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--contact-spacing-xs);
+    }
+    
+    .contact-info-card-icon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .contact-info-card-svg {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .contact-messengers-container {
+        padding: var(--contact-spacing-md);
+    }
+    
+    .contact-messengers-title {
+        font-size: 20px;
+    }
+    
+    .contact-messenger-btn {
+        padding: var(--contact-spacing-sm);
+        font-size: 12px;
+        min-width: auto;
+    }
+    
+    .contact-messenger-icon {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .contact-map-wrapper {
+        height: 280px;
+    }
+    
+    .contact-map-info {
+        padding: var(--contact-spacing-sm);
+    }
+    
+    .contact-map-info-address {
+        font-size: 16px;
+    }
+}
