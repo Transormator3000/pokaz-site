@@ -10,14 +10,14 @@ body {
     background-color: #ffffff;
 }
 
-/* ===== ОСНОВНОЙ КОНТЕЙНЕР ШАПКИ ===== */
+/* ===== ОСНОВНОЙ КОНТЕЙНЕР ШАПКИ - УБИРАЕМ OVERFLOW ===== */
 .header-container {
     position: relative;
     width: 100%;
     height: 280px;
-    overflow: hidden;
+    overflow: visible !important; /* ИЗМЕНЕНО: убираем overflow */
     margin-bottom: 20px;
-    z-index: 50; /* Базовый z-index для всей шапки */
+    z-index: 10; /* Базовый z-index */
 }
 
 /* ===== БЛОК ФОНА (независимый модуль) ===== */
@@ -41,14 +41,14 @@ body {
     background: rgba(0, 0, 0, 0.3);
 }
 
-/* ===== БЛОК ИДЕАЛЬНО БЕСШОВНОЙ СТРОКИ ФОТОГРАФИЙ (независимый модуль) ===== */
+/* ===== БЛОК ИДЕАЛЬНО БЕСШОВНОЙ СТРОКИ ФОТОГРАФИЙ - ОБРЕЗАЕМ ТОЛЬКО ФОТО ===== */
 .photos-strip-block {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    overflow: hidden; /* ОСТАВЛЯЕМ только здесь для обрезки фото */
     z-index: 3;
 }
 
@@ -59,7 +59,6 @@ body {
     animation: photosStripMove 80s linear infinite;
 }
 
-/* РАЗМЕРЫ .photo-item УПРАВЛЯЮТСЯ JS - НЕ ЗАДАЕМ width ЗДЕСЬ */
 .photo-item {
     flex-shrink: 0;
     height: 100%;
@@ -231,18 +230,17 @@ body {
     border-bottom-color: #ff6b35;
 }
 
-/* ===== МОБИЛЬНАЯ НАВИГАЦИЯ (независимый модуль - только для мобилки) ===== */
+/* ===== МОБИЛЬНАЯ НАВИГАЦИЯ - ИСПРАВЛЕННАЯ ===== */
 .mobile-navigation-block {
     position: absolute;
     top: 15px;
     right: 20px;
-    z-index: 1000; /* Высокий z-index для мобильного блока */
+    z-index: 999998; /* Высокий z-index */
     display: none;
     width: 30px;
     height: 24px;
 }
 
-/* Гамбургер кнопка */
 .mobile-menu-toggle {
     display: flex;
     flex-direction: column;
@@ -253,7 +251,7 @@ body {
     border: none;
     cursor: pointer;
     padding: 0;
-    z-index: 1001;
+    z-index: 999999;
     position: relative;
 }
 
@@ -292,9 +290,9 @@ body {
     width: 100%;
 }
 
-/* ИСПРАВЛЕННОЕ ВЫПАДАЮЩЕЕ МЕНЮ - БЕЗ TRANSFORM */
+/* ИСПРАВЛЕННОЕ ВЫПАДАЮЩЕЕ МЕНЮ - БЕЗ TRANSFORM, POSITION FIXED */
 .mobile-menu-dropdown {
-    position: fixed; /* FIXED вместо absolute */
+    position: fixed; /* FIXED для выхода из stacking context */
     top: 50px; /* Начальная позиция */
     right: 20px;
     background: rgba(26, 26, 26, 0.95);
@@ -304,11 +302,10 @@ body {
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     opacity: 0;
     visibility: hidden;
-    transition: all 0.3s ease;
-    z-index: 99999; /* МАКСИМАЛЬНЫЙ z-index */
+    transition: opacity 0.3s ease, visibility 0.3s ease, top 0.3s ease;
+    z-index: 2147483647; /* МАКСИМАЛЬНЫЙ z-index */
     
-    /* УБИРАЕМ ВСЕ TRANSFORM - ОНИ СОЗДАЮТ STACKING CONTEXT */
-    /* БЕЗ webkit-transform и backface-visibility */
+    /* УБИРАЕМ ВСЕ TRANSFORM - они создают stacking context */
 }
 
 .mobile-menu-dropdown.active {
@@ -362,7 +359,7 @@ body {
         left: 20px;
         top: auto;
         right: auto;
-        z-index: 1000;
+        z-index: 999998;
         width: 30px;
         height: 24px;
     }
@@ -370,6 +367,7 @@ body {
     .header-container {
         height: 235px;
         margin-bottom: 15px;
+        overflow: visible !important; /* ВАЖНО */
     }
     
     .photo-item {
@@ -426,25 +424,27 @@ body {
         letter-spacing: 1px;
     }
     
-    /* ИСПРАВЛЕННОЕ МОБИЛЬНОЕ МЕНЮ */
     .mobile-menu-dropdown {
-        position: fixed;
-        top: 50px;
+        top: 60px;
         left: 20px;
         right: auto;
         min-width: 180px;
-        z-index: 99999;
+        z-index: 2147483647;
     }
     
     .mobile-menu-dropdown.active {
-        top: 70px;
-        opacity: 1;
-        visibility: visible;
+        top: 75px;
     }
     
     .mobile-menu-link {
         font-size: 14px;
         padding: 10px 15px;
+    }
+    
+    /* ОБРЕЗАЕМ ТОЛЬКО ГОРИЗОНТАЛЬНО ДЛЯ ФОТО */
+    .photos-strip-block {
+        overflow-x: hidden !important;
+        overflow-y: visible !important;
     }
 }
 
@@ -452,6 +452,7 @@ body {
     .header-container {
         height: 215px;
         margin-bottom: 12px;
+        overflow: visible !important;
     }
     
     .photo-item {
@@ -497,20 +498,20 @@ body {
     .mobile-navigation-block {
         bottom: 15px;
         left: 15px;
-        z-index: 1000;
+        z-index: 999998;
         width: 28px;
         height: 22px;
     }
     
     .mobile-menu-dropdown {
         min-width: 160px;
-        top: 40px;
+        top: 45px;
         left: 15px;
-        z-index: 99999;
+        z-index: 2147483647;
     }
     
     .mobile-menu-dropdown.active {
-        top: 55px;
+        top: 60px;
     }
     
     .mobile-menu-link {
@@ -523,6 +524,7 @@ body {
     .header-container {
         height: 195px;
         margin-bottom: 10px;
+        overflow: visible !important;
     }
     
     .content-block {
@@ -563,20 +565,20 @@ body {
     .mobile-navigation-block {
         bottom: 12px;
         left: 12px;
-        z-index: 1000;
+        z-index: 999998;
         width: 25px;
         height: 20px;
     }
     
     .mobile-menu-dropdown {
         min-width: 150px;
-        top: 35px;
+        top: 40px;
         left: 12px;
-        z-index: 99999;
+        z-index: 2147483647;
     }
     
     .mobile-menu-dropdown.active {
-        top: 48px;
+        top: 55px;
     }
     
     .mobile-menu-link {
