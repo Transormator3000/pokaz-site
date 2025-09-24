@@ -17,6 +17,7 @@ body {
     height: 280px;
     overflow: hidden;
     margin-bottom: 20px;
+    z-index: 50; /* Базовый z-index для всей шапки */
 }
 
 /* ===== БЛОК ФОНА (независимый модуль) ===== */
@@ -62,7 +63,6 @@ body {
 .photo-item {
     flex-shrink: 0;
     height: 100%;
-    /* width УДАЛЕН - управляется HeaderLoadingTracker */
     position: relative;
     overflow: hidden;
     clip-path: polygon(45px 0, 100% 0, calc(100% - 45px) 100%, 0 100%);
@@ -102,7 +102,6 @@ body {
     justify-content: center;
     padding: 0 20px;
     z-index: 5;
-    overflow: visible !important;
 }
 
 .content-wrapper {
@@ -112,7 +111,6 @@ body {
     gap: 50px;
     max-width: 800px;
     width: 100%;
-    overflow: visible !important;
 }
 
 /* ===== БЛОК ЛОГОТИПА (независимый модуль) ===== */
@@ -238,9 +236,8 @@ body {
     position: absolute;
     top: 15px;
     right: 20px;
-    z-index: 100000;
+    z-index: 1000; /* Высокий z-index для мобильного блока */
     display: none;
-    isolation: isolate;
     width: 30px;
     height: 24px;
 }
@@ -256,7 +253,7 @@ body {
     border: none;
     cursor: pointer;
     padding: 0;
-    z-index: 100001;
+    z-index: 1001;
     position: relative;
 }
 
@@ -295,33 +292,27 @@ body {
     width: 100%;
 }
 
-/* Выпадающее меню - ПОВЕРХ ВСЕГО ВКЛЮЧАЯ КНОПКУ */
+/* ИСПРАВЛЕННОЕ ВЫПАДАЮЩЕЕ МЕНЮ - БЕЗ TRANSFORM */
 .mobile-menu-dropdown {
-    position: fixed;
-    top: 40px;
-    right: 0;
+    position: fixed; /* FIXED вместо absolute */
+    top: 50px; /* Начальная позиция */
+    right: 20px;
     background: rgba(26, 26, 26, 0.95);
     backdrop-filter: blur(10px);
     border-radius: 8px;
     min-width: 250px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    transform: translateY(-10px) translateZ(0);
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
-    z-index: 100002;
+    z-index: 99999; /* МАКСИМАЛЬНЫЙ z-index */
     
-    /* ФИКСЫ ДЛЯ МОБИЛЬНЫХ БРАУЗЕРОВ */
-    -webkit-transform: translateY(-10px) translateZ(0);
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    isolation: isolate;
-    will-change: transform, opacity;
+    /* УБИРАЕМ ВСЕ TRANSFORM - ОНИ СОЗДАЮТ STACKING CONTEXT */
+    /* БЕЗ webkit-transform и backface-visibility */
 }
 
 .mobile-menu-dropdown.active {
-    transform: translateY(0) translateZ(0);
-    -webkit-transform: translateY(0) translateZ(0);
+    top: 60px; /* Конечная позиция */
     opacity: 1;
     visibility: visible;
 }
@@ -339,16 +330,16 @@ body {
 .mobile-menu-link {
     display: block;
     padding: 12px 20px;
-    font-family: 'Montserrat', Arial, sans-serif !important;
+    font-family: 'Montserrat', Arial, sans-serif;
     font-size: 14px;
-    font-weight: 500 !important;
+    font-weight: 500;
     color: #f0f0f0;
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     transition: all 0.3s ease;
     border-left: 3px solid transparent;
-    text-align: left !important;
+    text-align: left;
 }
 
 .mobile-menu-link:hover,
@@ -356,18 +347,14 @@ body {
     color: #ff6b35;
     background: rgba(255, 107, 53, 0.1);
     border-left-color: #ff6b35;
-    font-weight: 500 !important;
-    text-align: left !important;
 }
 
 /* ===== АДАПТИВНОСТЬ ===== */
 @media (max-width: 1179px) {
-    /* Скрываем десктопную навигацию */
     .desktop-navigation-block {
         display: none;
     }
     
-    /* Показываем мобильную навигацию */
     .mobile-navigation-block {
         display: block;
         position: absolute;
@@ -375,8 +362,7 @@ body {
         left: 20px;
         top: auto;
         right: auto;
-        z-index: 100000;
-        isolation: isolate;
+        z-index: 1000;
         width: 30px;
         height: 24px;
     }
@@ -386,7 +372,6 @@ body {
         margin-bottom: 15px;
     }
     
-    /* width для .photo-item управляется JS */
     .photo-item {
         clip-path: polygon(30px 0, 100% 0, calc(100% - 30px) 100%, 0 100%);
         margin-right: -30px;
@@ -395,7 +380,6 @@ body {
     .content-block {
         height: 200px;
         padding: 25px 20px 0;
-        overflow: visible !important;
     }
     
     .content-wrapper {
@@ -405,7 +389,6 @@ body {
         justify-content: center;
         text-align: center;
         max-width: none;
-        overflow: visible !important;
     }
     
     .logo-block {
@@ -443,37 +426,25 @@ body {
         letter-spacing: 1px;
     }
     
-    /* КОМПАКТНОЕ МОБИЛЬНОЕ МЕНЮ */
+    /* ИСПРАВЛЕННОЕ МОБИЛЬНОЕ МЕНЮ */
     .mobile-menu-dropdown {
         position: fixed;
-        bottom: auto;
-        top: 60px;
+        top: 50px;
         left: 20px;
         right: auto;
         min-width: 180px;
-        z-index: 100002 !important;
-        -webkit-transform: translateY(-10px) translateZ(0);
-        transform: translateY(-10px) translateZ(0);
-        will-change: transform, opacity;
+        z-index: 99999;
     }
     
     .mobile-menu-dropdown.active {
+        top: 70px;
         opacity: 1;
-        -webkit-transform: translateY(0) translateZ(0);
-        transform: translateY(0) translateZ(0);
+        visibility: visible;
     }
     
     .mobile-menu-link {
         font-size: 14px;
         padding: 10px 15px;
-    }
-    
-    /* УБИРАЕМ ТОЛЬКО ГОРИЗОНТАЛЬНЫЕ ОГРАНИЧЕНИЯ, СОХРАНЯЯ ВОЗМОЖНОСТЬ СКРОЛЛА */
-    .header-container,
-    .background-block,
-    .photos-strip-block,
-    .photos-overlay {
-        overflow-x: hidden !important;
     }
 }
 
@@ -483,7 +454,6 @@ body {
         margin-bottom: 12px;
     }
     
-    /* width для .photo-item управляется JS */
     .photo-item {
         clip-path: polygon(22px 0, 100% 0, calc(100% - 22px) 100%, 0 100%);
         margin-right: -22px;
@@ -492,12 +462,10 @@ body {
     .content-block {
         height: 180px;
         padding: 20px 15px 0;
-        overflow: visible !important;
     }
     
     .content-wrapper {
         gap: 15px;
-        overflow: visible !important;
     }
     
     .logo-block img {
@@ -526,31 +494,23 @@ body {
         height: 22px;
     }
     
-    .hamburger-line:nth-child(1) {
-        width: 100%;
-    }
-    
-    .hamburger-line:nth-child(2) {
-        width: 85%;
-    }
-    
-    .hamburger-line:nth-child(3) {
-        width: 70%;
-    }
-    
     .mobile-navigation-block {
         bottom: 15px;
         left: 15px;
-        z-index: 100000 !important;
+        z-index: 1000;
         width: 28px;
         height: 22px;
     }
     
     .mobile-menu-dropdown {
         min-width: 160px;
-        top: 50px;
+        top: 40px;
         left: 15px;
-        z-index: 100002 !important;
+        z-index: 99999;
+    }
+    
+    .mobile-menu-dropdown.active {
+        top: 55px;
     }
     
     .mobile-menu-link {
@@ -568,12 +528,10 @@ body {
     .content-block {
         height: 160px;
         padding: 18px 12px 0;
-        overflow: visible !important;
     }
     
     .content-wrapper {
         gap: 12px;
-        overflow: visible !important;
     }
     
     .logo-block img {
@@ -602,31 +560,23 @@ body {
         height: 20px;
     }
     
-    .hamburger-line:nth-child(1) {
-        width: 100%;
-    }
-    
-    .hamburger-line:nth-child(2) {
-        width: 85%;
-    }
-    
-    .hamburger-line:nth-child(3) {
-        width: 70%;
-    }
-    
     .mobile-navigation-block {
         bottom: 12px;
         left: 12px;
-        z-index: 100000 !important;
+        z-index: 1000;
         width: 25px;
         height: 20px;
     }
     
     .mobile-menu-dropdown {
         min-width: 150px;
-        top: 45px;
+        top: 35px;
         left: 12px;
-        z-index: 100002 !important;
+        z-index: 99999;
+    }
+    
+    .mobile-menu-dropdown.active {
+        top: 48px;
     }
     
     .mobile-menu-link {
