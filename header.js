@@ -411,8 +411,18 @@ const photosStripBlock = {
     slider: document.getElementById('photosSlider'), 
     overlay: document.getElementById('photosOverlay'),
     photos: [
-
+        'https://i.ibb.co/6czXNsPN/0360bcfa-3f4e-4a50-8126-2bb73818864f.png',
+        'https://i.ibb.co/hq0Qb54/1000-F-268225711-8e-SYAQWXKKw-WV6-J3s-MEg-Gnj3-O654d1-Lb.jpg',
+        'https://i.ibb.co/hxhtsqTV/1947bdad-2bce-4ade-866f-88c9a2cb4763.png',
+        'https://i.ibb.co/qMZkcFnK/4131cc47-cbdd-48ca-9839-fb4bd7290cc8.png',
+        'https://i.ibb.co/9311nhsC/abcc9b16-9996-4324-b0e9-b82fb527c403.png',
+        'https://i.ibb.co/RrMnv2H/c52b75ff-d70a-420a-9ad9-b74e9d3695d9.png',
+        'https://i.ibb.co/5xW6Z0bP/d9b07336-1604-4612-bb84-853bfeb90bfe.png',
+        'https://i.ibb.co/2YfBNHjW/d95bb88c-9976-43f8-9f26-49096c46f42e.png',
+        'https://i.ibb.co/rgqj7Xj/f611a3df-792f-40e3-bdfa-b5f03c141b84.png',
+        'https://i.ibb.co/x8sppZbg/f885324d-b24f-4c13-a43b-4336db7e2786.png'
     ],
+
 
     currentOffset: 0,
     photoMargin: 20,
